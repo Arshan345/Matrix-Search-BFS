@@ -43,7 +43,7 @@ All packages used are included with the base install of python
 ## Installation
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Arshan345/Matrix-Search-BFS.git
 cd matrix-search
 ```
 
