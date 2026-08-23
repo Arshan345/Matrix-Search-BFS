@@ -11,7 +11,7 @@ def reconstructpath(came_from, start, end):
     return path
         
 
-def bfs(start, end, rows, columns):
+def bfs(start, end, rows, columns, direction):
     queue = deque([start])
     visited = {start}
     came_from = {}
@@ -19,7 +19,7 @@ def bfs(start, end, rows, columns):
         current = queue.popleft()
         if current == end:
             return reconstructpath(came_from, start, end)
-        val_cand = getneighbours(current, rows, columns)
+        val_cand = getneighbours(current, rows, columns,direction)
         for i in val_cand:
             if i in visited:
                 pass

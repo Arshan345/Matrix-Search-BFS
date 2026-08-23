@@ -18,21 +18,17 @@ def iswithinbounds(cell, rows, columns):
         return False
     else:
         return True
-rows = 8
-columns = 8
-
-cell_check = iswithinbounds((5,9), rows, columns)
-
 
 def iswalkable():
     pass
-def getneighbours(cell, rows, columns):
+def getneighbours(cell, rows, columns,direction):
     par_row, par_col = cell #Parent rows and cols from which the 4 candidates are derived
-    candidates = [(par_row-1,par_col),(par_row+1,par_col),(par_row,par_col-1),(par_row,par_col+1)] #creates a list of possible cells in 4 directions i.e. up,down,left,right
     val_cand = [] # List of the valid candidates
-    for i in candidates:
-        if iswithinbounds(i,rows,columns):
-            val_cand.append(i)
+    for i in direction:
+        row_offset, col_offset = i
+        candidate = ((par_row + row_offset), (par_col + col_offset))
+        if iswithinbounds(candidate,rows,columns):
+            val_cand.append(candidate)
     return val_cand
     
 
